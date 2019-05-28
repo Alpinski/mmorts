@@ -16,9 +16,8 @@
     }
     else
     {
-        echo "connection success";
         //IF CONNECTION IS GOOD, GET DATA FROM DATABASE
-        $query = "SELECT name, seperator, description, maintenance FROM configuration";
+        $query = "SELECT name, seperator, description, logo, maintenance FROM configuration";
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_assoc($result);
       
@@ -26,7 +25,7 @@
         $title          = $row['name'];
         $seperator      = $row['seperator'];
         $description    = $row['description'];
-        
+        $logo           = $row['logo'];
         
         
         

@@ -1,12 +1,42 @@
-/*body
+.wrapper 
 {
-    font-family: "open sans";
-
-}
-*/
-#wrapper 
-{
-    background-color:  #CCC;
     width: 1100px;
     margin: 0 auto;
+}
+.layer
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.header
+{
+    background-color: gray;
+    padding: 10px;
+    overflow: hidden;
+}
+.logo
+{
+    float: left;
+}
+.title
+{
+    float: left;
+    margin-left: 15px;
+}
+.account-actions
+{
+    float: right;
+    margin-top: 40px;
+    margin-right: 25px;
+}
+.content
+{
+    background-color: gray;
+    padding: 10px;
+}
+.footer
+{
+    background-color: gray;
+    text-align: center;
+    padding: 10px;
 }
