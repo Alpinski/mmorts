@@ -20,6 +20,10 @@
             {
                 require_once("frontend/pages/register.php");
             }
+            elseif ($page == "logout")
+            {
+                session_destroy();
+            }
         }
         else
         {

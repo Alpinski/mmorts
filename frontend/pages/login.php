@@ -26,9 +26,18 @@
             <div class = "layer">
                 <div class = "content">
                     <h2>Login</h2>
-                    <p>Login Page</p>
-                    <a href="index.php?page=index">Index</a>
-                    <a href="index.php?page=contact">Contact</a>
+                    <form role = "form" action = "backend/account/login-handling.php" method = "post">                       
+                        <div class = "form-group">
+                            <label for = "username">Username:</label>
+                            <input type = "text" class = "form-control" id = "username" name = "username" required>
+                        </div>
+                        
+                        <div class = "form-group">
+                            <label for = "password">Password:</label>
+                            <input type = "password" class = "form-control" id = "password" name = "password" required>
+                        </div>
+                        <button type = "submit" class = "btn btn-default">Submit</button>
+                    </form>
                 </div>
             </div>
             <?php require_once("frontend/templates/footer.php"); ?>

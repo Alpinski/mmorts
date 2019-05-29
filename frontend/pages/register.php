@@ -12,7 +12,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+        <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="frontend/design/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
@@ -26,20 +26,20 @@
             <div class = "layer">
                 <div class = "content">
                     <h2>Register</h2>
-                    <form role = "form">                       
+                    <form role = "form" action = "backend/account/registration-handling.php" method = "post">                       
                         <div class = "form-group">
                             <label for = "username">Username:</label>
-                            <input type = "text" class = "form-control" id = "username" required>
+                            <input type = "text" class = "form-control" id = "username" name = "username" required>
                         </div>
                         
                         <div class = "form-group">
                             <label for = "password">Password:</label>
-                            <input type = "password" class = "form-control" id = "password" required>
+                            <input type = "password" class = "form-control" id = "password" name = "password" required>
                         </div>
 
                         <div class = "form-group">
                             <label for = "email">E-mail Address:</label>
-                            <input type = "email" class = "form-control" id = "email" required>
+                            <input type = "email" class = "form-control" id = "email" name = "email" required>
                         </div>
                         <button type = "submit" class = "btn btn-default">Submit</button>
                     </form>
