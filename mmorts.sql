@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 29, 2019 at 10:00 AM
+-- Generation Time: Jun 10, 2019 at 11:00 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -50,13 +50,21 @@ CREATE TABLE IF NOT EXISTS `army` (
 DROP TABLE IF EXISTS `cities`;
 CREATE TABLE IF NOT EXISTS `cities` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_id` int(255) NOT NULL DEFAULT '0',
   `name` varchar(20) DEFAULT NULL,
   `resources_id` int(255) DEFAULT NULL,
   `buildings_id` int(255) DEFAULT NULL,
   `production_id` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cities`
+--
+
+INSERT INTO `cities` (`id`, `user_id`, `name`, `resources_id`, `buildings_id`, `production_id`) VALUES
+(1, 20, 'istanbul', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -101,6 +109,32 @@ CREATE TABLE IF NOT EXISTS `profiles` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `resources`
+--
+
+DROP TABLE IF EXISTS `resources`;
+CREATE TABLE IF NOT EXISTS `resources` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_id` int(255) DEFAULT NULL,
+  `city_id` int(255) DEFAULT NULL,
+  `planks` int(255) DEFAULT NULL,
+  `ore` int(255) DEFAULT NULL,
+  `clay` int(255) DEFAULT NULL,
+  `food` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `resources`
+--
+
+INSERT INTO `resources` (`id`, `user_id`, `city_id`, `planks`, `ore`, `clay`, `food`) VALUES
+(1, 20, 1, 100, 100, 100, 100);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `terrain_types`
 --
 
@@ -139,18 +173,19 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `username` varchar(16) DEFAULT NULL,
-  `password` char(32) DEFAULT NULL,
+  `password` longtext,
   `email` varchar(55) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
-(6, 'Alpacino', 'd1e6b917e2b99d7e4a94d0390b84e304', 'alpi1997@hotmail.com');
+(20, 'Alpacino', '9e2a629541fc932e5ebebd39f88441a5', 'alpi1997@hotmail.com'),
+(21, 'asdasd', '$2y$10$6LNy0O/QPzB5YAgTFdKjKOf.kW9XmxDg0TQH0GaPPf8PoFMxvrJ/i', 'test@test.test');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -64,29 +64,50 @@
                                 <?php
                             }
                         }
-                                if(isset($_SESSION['loggedin']))
-                                {
-                                ?>
-                                    <h3>Village</h3>
+                        if(isset($_SESSION['loggedin']))
+                        {
+                            require_once ($_SERVER['DOCUMENT_ROOT']."/mmorts/system/config.php");
 
-                                    <div class = "village-wrapper">
+                            $username = $_SESSION['loggedin'];
 
-                                        <div class = "resources">
-                                            Resources
-                                        </div>
+                            //IF CONNECTION IS GOOD, GET DATA FROM DATABASE
+                            $query = "SELECT id FROM users WHERE username = '$username'";
+                            $result = mysqli_query($conn, $query);
+                            $row = mysqli_fetch_assoc($result);
+                        
+                            //USERDATA
+                            $userId = $row['id'];
+                            
+                            //GET CITY DATA
+                            $query = "SELECT name FROM cities WHERE user_id = '$userId'";
+                            $result = mysqli_query($conn, $query);
+                            $row = mysqli_fetch_assoc($result);
 
-                                        <div class = "village">
-                                            Village image
-                                        </div>
-                                    
-                                        <div class = "armies">
-                                            Armies
-                                        </div>
+                            //USERDATA
+                            $cityName = $row['name'];
+                        ?>
+                            <h3>Village</h3>
+
+                            <div class = "village-wrapper">
+
+                                <div class = "resources">
+                                    <h4>Resources</h4>
+                                </div>
+
+                                <div class = "village">
+                                    <div class = "keep">
+                                        <a href = "http://google.com"><img src = "frontend/images/keep.png"/>
                                     </div>
+                                </div>
+                            
+                                <div class = "armies">
+                                    <h4>Armies</h4>
+                                </div>
+                            </div>
 
-                                <?php
-                                }
-                                ?>
+                        <?php
+                        }
+                        ?>
                     <a href="index.php?page=index">Index</a>
                     <a href="index.php?page=contact">Contact</a>
                 </div>
