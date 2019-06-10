@@ -7,9 +7,10 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    
     //ENCRYPT PASSWORD
     $password = md5($password);
-
+    
     //CHECK IF USER IS UNIQUE
     $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 
@@ -23,9 +24,13 @@
     {
         echo "details are correct";
         $_SESSION['loggedin'] = $username;    
+        header("Location: ../../index.php?msg=loginsuccess");
+        die();
     }
     else
     {
-        
+       
+        header("Location: ../../index.php?msg=loginunsuccessfull");
+        die();
     }
 ?>

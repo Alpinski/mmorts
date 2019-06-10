@@ -36,7 +36,7 @@
                             <label for = "password">Password:</label>
                             <input type = "password" class = "form-control" id = "password" name = "password" required>
                         </div>
-                        <button type = "submit" class = "btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
                     </form>
                 </div>
             </div>

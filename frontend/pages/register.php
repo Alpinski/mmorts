@@ -26,22 +26,26 @@
             <div class = "layer">
                 <div class = "content">
                     <h2>Register</h2>
-                    <form role = "form" action = "backend/account/registration-handling.php" method = "post">                       
+                    <form role = "form" action = "backend/account/registration-handling.php" method = "post" oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'> 
+                      
                         <div class = "form-group">
-                            <label for = "username">Username:</label>
-                            <input type = "text" class = "form-control" id = "username" name = "username" required>
-                        </div>
-                        
-                        <div class = "form-group">
-                            <label for = "password">Password:</label>
-                            <input type = "password" class = "form-control" id = "password" name = "password" required>
+                            <input type = "text" class = "form-control" id = "username" name = "username" placeholder = "Username" required>
                         </div>
 
                         <div class = "form-group">
-                            <label for = "email">E-mail Address:</label>
-                            <input type = "email" class = "form-control" id = "email" name = "email" required>
+                            <input type = "email" class = "form-control" id = "email" name = "email" placeholder = "E-mail" required>
                         </div>
-                        <button type = "submit" class = "btn btn-default">Submit</button>
+                        
+                        <div class = "form-group">
+                            <input type = "password" class = "form-control" id = "password" name = "password" placeholder = "Password" required>
+                        </div>
+
+                        <div class = "form-group">
+                            <input type = "password" class = "form-control" id = "password2" name = "password2" placeholder = "Confirm password">
+                        </div>
+
+                        <div><button type="submit" class="btn btn-outline-dark">Submit</button></div>
+
                     </form>
                 </div>
             </div>

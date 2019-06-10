@@ -32,6 +32,4 @@
         //TECHNICAL SETTINGS
         $maintenance    = $row['maintenance'];
     }
-
-
 ?>

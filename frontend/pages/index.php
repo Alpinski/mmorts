@@ -27,6 +27,66 @@
                 <div class = "content">
                     <h2>Index</h2>
                     <p>Index Page</p>
+                    <?php
+                        if(isset($_GET['msg']))
+                        {
+                            $bad = false;
+                            
+                            $msg = $_GET['msg'];
+
+                            if($msg == "loginsuccess")
+                            {
+                                $msg = "You successfully logged in!";
+                            }
+                            if($msg == "registrationsuccess")
+                            {
+                                $msg = "You successfully registred!";
+                            }
+                            if($msg == "logoutsuccess")
+                            {
+                                $msg = "You successfully logged out!";
+                            }   
+                            if($msg == "loginunsuccessfull")
+                            {
+                                $bad = true;
+                                $msg = "You failed to log in!";
+                            }  
+                            if($bad == true)
+                            {
+                                ?>
+                                    <div class="alert alert-danger" role="alert"><?php echo $msg; ?></div>
+                                <?php
+                            }
+                            else 
+                            {
+                                ?>
+                                    <div class="alert alert-success" role="alert"><?php echo $msg; ?></div>                                  
+                                <?php
+                            }
+                        }
+                                if(isset($_SESSION['loggedin']))
+                                {
+                                ?>
+                                    <h3>Village</h3>
+
+                                    <div class = "village-wrapper">
+
+                                        <div class = "resources">
+                                            Resources
+                                        </div>
+
+                                        <div class = "village">
+                                            Village image
+                                        </div>
+                                    
+                                        <div class = "armies">
+                                            Armies
+                                        </div>
+                                    </div>
+
+                                <?php
+                                }
+                                ?>
                     <a href="index.php?page=index">Index</a>
                     <a href="index.php?page=contact">Contact</a>
                 </div>

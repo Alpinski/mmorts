@@ -23,6 +23,10 @@
             elseif ($page == "logout")
             {
                 session_destroy();
+                echo "Logged out.";
+                header("Location: index.php?msg=logoutsuccess");
+                die();
+
             }
         }
         else

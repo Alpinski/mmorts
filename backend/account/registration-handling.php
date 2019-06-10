@@ -33,7 +33,9 @@
         //EXECUTE QUERY
         if($conn->query($sql) === TRUE)
         {
-            echo "Account has been created successfully.";
+            
+            header("Location: ../../index.php?msg=registrationsuccess");
+            die();
         }
         else
         {
