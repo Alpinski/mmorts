@@ -7,7 +7,9 @@
     $email = $_POST['email'];
 
     //ENCRYPT PASSWORD
-    $password = md5($password);
+    //$password = md5($password);
+
+    $password = password_hash($password, PASSWORD_BCRYPT);
 
     //CHECK IF VALUES ARE OKAY
 

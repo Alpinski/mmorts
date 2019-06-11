@@ -9,28 +9,28 @@
 
     
     //ENCRYPT PASSWORD
-    $password = md5($password);
+    //$password = md5($password);
     
     //CHECK IF USER IS UNIQUE
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    $query = "SELECT password FROM users WHERE username = '$username'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
 
-    if($result = mysqli_query($conn,$sql))
-    {
-        $rowcount = mysqli_num_rows($result);
+    $dbPassword = $row['password'];
 
-    }
-
-    if($rowcount == 1)
+    if(password_verify($password, $dbPassword))
     {
         echo "details are correct";
         $_SESSION['loggedin'] = $username;    
+    
         header("Location: ../../index.php?msg=loginsuccess");
         die();
+
     }
     else
     {
-       
-        header("Location: ../../index.php?msg=loginunsuccessfull");
-        die();
+        echo "Passwords do not match";
     }
+
+   
 ?>
