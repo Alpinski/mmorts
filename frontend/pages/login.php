@@ -29,14 +29,14 @@
                     <form role = "form" action = "backend/account/login-handling.php" method = "post">                       
                         <div class = "form-group">
                             <label for = "username">Username:</label>
-                            <input type = "text" class = "form-control" id = "username" name = "username" required>
+                            <input type = "text" class = "form-control" id = "username" name = "username" placeholder = "Username" required>
                         </div>
                         
                         <div class = "form-group">
                             <label for = "password">Password:</label>
-                            <input type = "password" class = "form-control" id = "password" name = "password" required>
+                            <input type = "password" class = "form-control" id = "password" name = "password" placeholder = "Password" required>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-outline-dark">Submit</button>
                     </form>
                 </div>
             </div>

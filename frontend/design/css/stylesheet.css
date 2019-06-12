@@ -93,3 +93,8 @@
     background-color: #cddc39;
     font-size: 20px;
 }
+.games
+{
+    float: right;
+    text-align: right;
+}

@@ -2,7 +2,6 @@
     <div class = "header">
         <div class = "logo";>
             <a href = "index.php?page-index"><img src = "frontend/images/<?php echo $logo; ?>"/></a>
-
         </div>
 
         <div class = "title">
